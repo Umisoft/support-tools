@@ -1,10 +1,11 @@
 <?php
-
 	/**
 	 * Скрипт заново создает иерархические связи для всех объектный типов.
+	 * Скрипт запускается из корня сайта.
+	 * Перед применением стоит сделать бэкап базы данных.
 	 */
 	header('Content-type: text/html; charset=utf-8');
-	include __DIR__ . '/../standalone.php';
+	include __DIR__ . './standalone.php';
 
 	use UmiCms\Service;
 
