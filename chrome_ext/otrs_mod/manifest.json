@@ -1,0 +1,33 @@
+{
+	"author": "ZingerY",
+	"manifest_version": 2,
+	"name": "OTRS_mod",
+	"version": "0.2.1",
+	
+	"permissions": [
+		"contextMenus"
+	],
+	
+	"background": {
+		"scripts": ["menu.js"]
+	},
+
+	"icons": {
+		"128": "128.png",
+		"32": "32.png",
+		"16": "16.png"
+	},
+
+	"browser_action": {
+		"default_icon": "16.png",
+		"default_title": "Test"
+	},
+
+	"content_scripts": [
+		{
+		  "matches": [ "https://otrs.umisoft.ru/*","http://otrs.umisoft.ru/*" ],
+		  "js": [ "core.js", "script.js" ],
+		  "css": [ "styles.css" ]
+		}
+	]
+}
