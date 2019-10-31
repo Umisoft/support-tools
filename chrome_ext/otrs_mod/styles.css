@@ -1,0 +1,19 @@
+#OwnerIDs,#CreatedUserIDs,#QueueIDs,#CreatedQueueIDs {
+	height: 160px !important;
+}
+#StateIDs {
+    height: 105px;
+}
+#LockIDs {
+	height: 55px;
+}
+.Footer {
+	position: fixed;
+    padding: 0px !important;
+    right: 5px;
+    bottom: 50px;
+    border: 0px;
+}
+#submitRichText {
+	padding: 10px;
+}
