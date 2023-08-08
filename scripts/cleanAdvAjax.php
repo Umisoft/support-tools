@@ -68,7 +68,7 @@ var consoleDebug = false;
 function ajax(opt) {
 	var xhr = new XMLHttpRequest;
 	xhr.open('POST', '<?=$_SERVER["SCRIPT_NAME"]?>', true);
-	xhr.onreadystatechange = function() { 
+	xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4) {
 				opt.func(xhr,opt.step,opt.start);
 			}
@@ -259,7 +259,7 @@ function doneDel(xhr,step,start) {
 						start: start
 					});
 				}
-			} 
+			}
 		}
 	} else {
 		if (checkError(step, xhr,tr.cells[8])) {
@@ -347,13 +347,14 @@ testBut.addEventListener('click', startTest, true);
 		$user = $config->get("connections", "core.login");
 		$password = $config->get("connections", "core.password");
 		$db = $config->get("connections", "core.dbname");
+		$port = $config->get("connections", "core.port");
 		$connection = ConnectionPool::getInstance()->getConnection();
-		$mysqli = new mysqli($host, $user, $password, $db);
+		$mysqli = new mysqli($host, $user, $password, $db, $port);
 
 		if ($mysqli->connect_error) {
 			die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 		}
-		if (!$mysqli->real_connect($host, $user, $password, $db)) {
+		if (!$mysqli->real_connect($host, $user, $password, $db, $port)) {
 			die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 		} else {
 			$cleaner->do_clean();
